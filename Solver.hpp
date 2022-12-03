@@ -50,7 +50,7 @@ class Solver {
   int negamax(const Position &P, int alpha, int beta);
 
  public:
-  static const int INVALID_MOVE = -1000;
+  const int INVALID_MOVE = -1000;
 
   // Returns the score of a position
   int solve(const Position &P, bool weak = false);
@@ -68,8 +68,8 @@ class Solver {
     transTable.reset();
   }
 
-  void loadBook(std::string book_file) {
-    book.load(book_file);
+  int loadBook(std::string book_file) {
+    return book.load(book_file);
   }
 
   Solver(); // Constructor
